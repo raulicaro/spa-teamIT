@@ -1,0 +1,210 @@
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.dashboard-paper {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+.dashboard-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.dashboard-add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dashboard-add-button:focus {
+    outline: none;
+}
+.dashboard-add-button:active {
+    background-color: #45a049;
+}
+.dashboard-add-button:hover {
+    background-color: #45a049;
+}
+.dashboard-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dashboard-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.dashboard-modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.dashboard-modal-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.dashboard-modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.datalist-paper {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.datalist-description {
+    margin-bottom: 1px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.data-list {
+    margin-top: 20px;
+}
+
+.data-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+form input {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 8px 16px;
+}
+
+.data-item button {
+    margin-top: 8px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Fundo da tela */
+.login-background {
+    min-height: 100vh;
+    background-color: #708090; /* SlateGray */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Cartão de login */
+  .login-card {
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+  }
+  
+  /* Título */
+  .login-title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    color: #00008b; /* DarkBlue */
+  }
+  
+  /* Inputs */
+  .login-input .MuiOutlinedInput-root {
+    border-radius: 10px;
+    height: 56 px;
+  }
+  
+  /* Botão */
+  .login-button {
+    margin-top: 16px;
+    background-color: #00008b !important;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  
+  .login-button:hover {
+    background-color: #00006b !important;
+  }
+  
