@@ -30,22 +30,20 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.dashboard-add-button {
-    background-color: #4CAF50;
-    color: white;
+.dashboard-add-button .MuiButton-root {
     padding: 10px 20px;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 10px;
 }
 .dashboard-add-button:focus {
     outline: none;
 }
 .dashboard-add-button:active {
-    background-color: #45a049;
+    background-color: #708090;
 }
 .dashboard-add-button:hover {
-    background-color: #45a049;
+    background-color: #708090;
 }
 .dashboard-loading {
     display: flex;
@@ -89,6 +87,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.dashboard-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .datalist-paper {
@@ -165,16 +170,14 @@ form button {
     cursor: pointer;
 }
 
-/* Fundo da tela */
 .login-background {
     min-height: 100vh;
-    background-color: #708090; /* SlateGray */
+    background-color: #708090;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  /* Cartão de login */
   .login-card {
     padding: 32px;
     border-radius: 16px;
@@ -183,20 +186,17 @@ form button {
     text-align: center;
   }
   
-  /* Título */
   .login-title {
     margin-bottom: 24px;
     font-weight: bold;
-    color: #00008b; /* DarkBlue */
+    color: #00008b; 
   }
   
-  /* Inputs */
   .login-input .MuiOutlinedInput-root {
     border-radius: 10px;
     height: 56 px;
   }
-  
-  /* Botão */
+
   .login-button {
     margin-top: 16px;
     background-color: #00008b !important;

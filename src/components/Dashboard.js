@@ -66,25 +66,27 @@ return (
                     Sair
                 </Button>
             </Box>
+            <Container className="dashboard-search-container">
+                <TextField
+                    fullWidth
+                    label="Buscar por título"
+                    variant="outlined"
+                    margin="normal"
+                    className="dashboard-search-input"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
 
-            <TextField
-                fullWidth
-                label="Buscar por título"
-                variant="outlined"
-                margin="normal"
-                className="dashboard-search-input"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-            />
-
-            <Button
-                variant="contained"
-                className="dashboard-add-button"
-                onClick={handleOpen}
-                startIcon={<Add />}
-            >
-                Adicionar Item
-            </Button>
+                <Button
+                    variant="contained"
+                    className="dashboard-add-button"
+                    onClick={handleOpen}
+                    startIcon={<Add />}
+                    sx={{ml:5}}
+                >
+                    Item
+                </Button>
+            </Container>            
 
             <Suspense fallback={<Typography className="dashboard-loading">Carregando...</Typography>}>
                 <DataList items={filtered} onDelete={handleDelete} />
