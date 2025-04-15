@@ -1,6 +1,5 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { fetchData, addItem, deleteItem } from '../Api/mockApi';
-// import DataList from './Datalist';
 import { Add } from '@mui/icons-material';
 import {
   Container,
@@ -47,7 +46,7 @@ function Dashboard({ onLogout }) {
     await addItem(newItem);
     setNewItem({ title: '', description: '' });
     loadData();
-    setOpen(false); // fecha o modal após adicionar
+    setOpen(false);
   };
 
   const handleDelete = async (id) => {
@@ -90,11 +89,6 @@ return (
             <Suspense fallback={<Typography className="dashboard-loading">Carregando...</Typography>}>
                 <DataList items={filtered} onDelete={handleDelete} />
             </Suspense>
-            {/* {loading ? (
-                <Typography className="dashboard-loading">Carregando...</Typography>
-            ) : (
-                <DataList items={filtered} onDelete={handleDelete} />
-            )} */}
         </Paper>
 
         <Modal

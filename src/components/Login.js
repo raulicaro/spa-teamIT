@@ -18,7 +18,6 @@ function Login({ onLogin }) {
         e.preventDefault();
         try {
             const response = await login(username, password);
-            console.log('Login response:', response);
             onLogin(response.token);
         } catch (err) {
             setError(err);
