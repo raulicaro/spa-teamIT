@@ -33,7 +33,7 @@ function Login({ onLogin }) {
 
                 <Box component="form" onSubmit={handleSubmit}>
                     <TextField
-                        label="Usuário"
+                        label="Username"
                         fullWidth
                         margin="none"
                         className="login-input"
@@ -42,7 +42,7 @@ function Login({ onLogin }) {
                     />
 
                     <TextField
-                        label="Senha"
+                        label="Password"
                         type="password"
                         fullWidth
                         margin="normal"
@@ -63,7 +63,7 @@ function Login({ onLogin }) {
                         fullWidth
                         className="login-button"
                     >
-                        Entrar
+                        Sign in
                     </Button>
                 </Box>
             </Paper>

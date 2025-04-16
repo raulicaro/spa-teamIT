@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { fetchData, addItem, deleteItem } from '../Api/mockApi';
+import { ModalItem } from './Modal';
 import { Add } from '@mui/icons-material';
 import {
   Container,
@@ -8,18 +9,14 @@ import {
   Button,
   Box,
   Paper,
-  Modal,
-  Fade,
-  Backdrop,
 } from '@mui/material';
 const DataList = React.lazy(() => import('./Datalist'));
-
 
 function Dashboard({ onLogout }) {
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState('');
-  const [newItem, setNewItem] = useState({ title: '', description: '' });
+  const [newItem, setNewItem] = useState({ title: '', description: '' , id: ''});
   const [open, setOpen] = useState(false);
 
   const loadData = () => {
@@ -55,7 +52,6 @@ function Dashboard({ onLogout }) {
   };
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
 return (
     <Container maxWidth="sm" className="dashboard-container">
@@ -63,13 +59,13 @@ return (
             <Box className="dashboard-header">
                 <Typography variant="h5">Dashboard</Typography>
                 <Button variant="outlined" color="error" onClick={onLogout}>
-                    Sair
+                    Logout
                 </Button>
             </Box>
             <Container className="dashboard-search-container">
                 <TextField
                     fullWidth
-                    label="Buscar por título"
+                    label="Search by title"
                     variant="outlined"
                     margin="normal"
                     className="dashboard-search-input"
@@ -88,58 +84,17 @@ return (
                 </Button>
             </Container>            
 
-            <Suspense fallback={<Typography className="dashboard-loading">Carregando...</Typography>}>
+            <Suspense fallback={<Typography className="dashboard-loading">Loading...</Typography>}>
                 <DataList items={filtered} onDelete={handleDelete} />
             </Suspense>
         </Paper>
-
-        <Modal
+        <ModalItem
             open={open}
-            onClose={handleClose}
-            closeAfterTransition
-            slots={{ backdrop: Backdrop }}
-            slotProps={{
-                backdrop: {
-                    timeout: 500,
-                },
-            }}
-        >
-            <Fade in={open}>
-                <Box className="dashboard-modal">
-                    <Typography variant="h6" className="dashboard-modal-title">
-                        Novo Item
-                    </Typography>
-                    <form onSubmit={handleAdd}>
-                        <TextField
-                            label="Título"
-                            fullWidth
-                            className="dashboard-modal-input"
-                            margin="normal"
-                            value={newItem.title}
-                            onChange={(e) =>
-                                setNewItem({ ...newItem, title: e.target.value })
-                            }
-                        />
-                        <TextField
-                            label="Descrição"
-                            fullWidth
-                            margin="normal"
-                            value={newItem.description}
-                            className="dashboard-modal-input"
-                            onChange={(e) =>
-                                setNewItem({ ...newItem, description: e.target.value })
-                            }
-                        />
-                        <Box className="dashboard-modal-actions">
-                            <Button onClick={handleClose}>Cancelar</Button>
-                            <Button variant="contained" type="submit">
-                                Adicionar
-                            </Button>
-                        </Box>
-                    </form>
-                </Box>
-            </Fade>
-        </Modal>
+            setOpen={setOpen}
+            handleAdd={handleAdd}
+            newItem={newItem}
+            setNewItem={setNewItem}
+        />
     </Container>
 );
 }

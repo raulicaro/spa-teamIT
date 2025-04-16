@@ -1,35 +1,73 @@
-SPA - Test Team.IT
+### SPA - Test Team.IT
 
-This SPA was created as a Frontend Coding Challenge - React. It is an Interactive Web Application that interacts with a mocked API. I have implemented, in a simplified way, features like user authentication, data fetching, and dynamic rendering.
+This project is a Single Page Application (SPA) developed as a Frontend Coding Challenge using React. It demonstrates key features such as user authentication, data fetching, and dynamic rendering, interacting with a mocked API.
 
-In this project, I use json-server so that the application can consume real data locally, simulating a real application with a backend. The `db.json` file (at the same level as `package.json`) stores the information, simulating a database.
+#### Features:
+- **User Authentication**: Simplified login system with predefined credentials.
+- **Data Fetching**: Simulates interaction with a backend using `json-server`.
+- **Dynamic Rendering**: Updates the UI based on API responses.
 
-To install json-server:
+#### Local Development Setup:
+1. **Install Dependencies**:
+    - Install `json-server` for simulating a backend:
+      ```bash
+      npm install -D json-server
+      ```
+    - Install project dependencies:
+      ```bash
+      npm install
+      ```
 
-### `npm install -D json-server`
+2. **Run the Mock API**:
+    - Start the `json-server` to serve the mock API:
+      ```bash
+      npm run server
+      ```
+    - The API will be available at:
+      [http://localhost:5000/items](http://localhost:5000/items)
 
-To run the API:
+3. **Run the Application**:
+    - Start the development server:
+      ```bash
+      npm start
+      ```
+    - Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-### `npm run server`
+    - The app supports hot-reloading, so changes to the code will automatically reflect in the browser. Check the console for any linting errors.
 
-The API will be available at:
+#### Credentials for Authentication:
+- **Username**: `admin`
+- **Password**: `123`
 
-http://localhost:5000/items
+#### Example `db.json` Structure:
+The `db.json` file acts as a mock database for the application. Below is an example structure:
 
-
-To run the project:
-
-### `npm install`
-### `npm start`
-
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+{
+  "items": [
+    {
+      "id": "681e",
+      "title": "Item 1",
+      "description": "Item 1"
+    },
+    {
+      "id": "2539",
+      "title": "Item 1",
+      "description": "Item 1"
+    },
+    {
+      "id": "2257",
+      "title": "Item 1",
+      "description": "Item 1"
+    },
+    {
+      "id": "da5d",
+      "title": "Item 2",
+      "description": "Item 2"
+    },
+    {
+      "id": "197e",
+      "title": "Item 2",
+      "description": "Item 2"
+    }
+  ]
+}

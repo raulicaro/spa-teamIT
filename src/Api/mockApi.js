@@ -38,7 +38,22 @@ export const deleteItem = async (id) => {
   try {
     await axios.delete(`${API_URL}/${id}`);
   } catch (error) {
+    console.log(error)
     throw new Error('Erro ao deletar o item');
+  }
+};
+
+export const editItem = async (id, updatedItem) => {
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, updatedItem, {
+      headers: { 
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${FAKE_JWT}`
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error('Erro ao editar o item');
   }
 };
 
