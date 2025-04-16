@@ -39,7 +39,6 @@ function DataList({ items, onDelete }) {
     };
 
     const handleDeleteClick = (id) => {
-        console.log(id);
         setItemToDelete(id);
         setDeleteDialogOpen(true);
     };

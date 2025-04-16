@@ -16,7 +16,7 @@ function Dashboard({ onLogout }) {
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState('');
-  const [newItem, setNewItem] = useState({ title: '', description: '' , id: ''});
+  const [newItem, setNewItem] = useState({ title: '', description: '' });
   const [open, setOpen] = useState(false);
 
   const loadData = () => {
